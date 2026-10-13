@@ -1,4 +1,4 @@
-const API_URL = "https://mental-health-score-og1w.onrender.com";
+const API_URL = "https://mental-health-score-0skj.onrender.com";
 
 const form = document.getElementById("prediction-form");
 const submitButton = document.getElementById("submit-button");
