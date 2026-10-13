@@ -51,7 +51,7 @@ def greet():
 
 
 
-@app.post("/predict")
+@app.post("/predict",response_model=PredictionResponse)
 def predict(data:studentdata):
     country_group = (data.Country if data.Country in top_countries else "Other")
 
@@ -71,7 +71,7 @@ def predict(data:studentdata):
     'Physical_Activity_Hours':data.Physical_Activity_Hours,
     'Sleep_Hours_Per_Night':data.Sleep_Hours_Per_Night,
     'Stress_Level':data.Stress_Level,
-    'Grouped_country':country_group
+    'Grouped_Country':country_group
     }])
 
 
