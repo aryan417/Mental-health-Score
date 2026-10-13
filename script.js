@@ -114,7 +114,7 @@ form.addEventListener("submit", async (event) => {
     if (!response.ok) {
       throw new Error(formatApiError(body, response.status));
     }
-https
+
     const score = body.predicted_mental_health_score;
     if (typeof score !== "number" || !Number.isFinite(score)) {
       throw new Error("The API response did not include a valid 'predicted_mental_health_score' number.");
