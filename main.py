@@ -53,24 +53,24 @@ def greet():
 
 @app.post("/predict")
 def predict(data:studentdata):
-    country_group = data.country if data.country in top_countries else "other"
+    country_group = (data.country if data.country in top_countries else "other")
 
 
     input_row = pd.DataFrame([{
-        
 
-    'Age':data.age,
-    'Gender':data.gender,
-    'Country':data.country,
+
+    'Age':data.Age,
+    'Gender':data.Gender,
+    'Country':data.Country,
     'Academic_Level':data.Academic_Level,
     'Most_Used_Platform':data.Most_Used_Platform,
     'Purpose_Of_Use':data.Purpose_Of_Use,
     'Avg_Daily_Usage_Hours':data.Avg_Daily_Usage_Hours,
     'Daily_Unlocks':data.Daily_Unlocks,
-    'Study_Hours':data.study_hours,
-    'Physical_Activity_Hours':data.physical_activity_hours,
+    'Study_Hours':data.Study_Hours,
+    'Physical_Activity_Hours':data.Physical_Activity_Hours,
     'Sleep_Hours_Per_Night':data.Sleep_Hours_Per_Night,
-    'Stress_Level':data.stress_level,
+    'Stress_Level':data.Stress_Level,
     'Grouped_country':country_group
     }])
 
