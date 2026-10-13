@@ -45,8 +45,8 @@ function readFormData() {
 
 function validatePayload(data) {
   if (!form.reportValidity()) return "Please complete all required fields and check the highlighted values.";
-  if (!Number.isInteger(data.Age) || data.Age < 10 || data.Age > 10) {
-    return "Age must be 10 according to the current backend validation (Age: ge=10, le=10).";
+  if (!Number.isInteger(data.Age) || data.Age < 10 || data.Age > 100) {
+    return "Age must be between 10 to 100";
   }
   if (!Number.isInteger(data.Daily_Unlocks) || data.Daily_Unlocks < 0) {
     return "Daily phone unlocks must be a whole number greater than or equal to 0.";
