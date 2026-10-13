@@ -1,4 +1,4 @@
-const API_URL = "https://mental-health-score-0skj.onrender.com/predict";
+const API_URL = "https://mental-health-score-0skj.onrender.com";
 
 const form = document.getElementById("prediction-form");
 const submitButton = document.getElementById("submit-button");
@@ -46,7 +46,7 @@ function readFormData() {
 function validatePayload(data) {
   if (!form.reportValidity()) return "Please complete all required fields and check the highlighted values.";
   if (!Number.isInteger(data.Age) || data.Age < 10 || data.Age > 100) {
-    return "Age must be between 10 to 100";
+    return "Age must be between 10";
   }
   if (!Number.isInteger(data.Daily_Unlocks) || data.Daily_Unlocks < 0) {
     return "Daily phone unlocks must be a whole number greater than or equal to 0.";
@@ -126,7 +126,7 @@ form.addEventListener("submit", async (event) => {
     resultCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
   } catch (error) {
     if (error instanceof TypeError) {
-      showError("Could not connect to the API. Make sure your FastAPI server is running at http://127.0.0.1:2200 and that the frontend is opened from the same computer. If the browser reports a CORS error, the backend's CORS configuration must be valid.");
+      showError("Could not connect to the API. Make sure your FastAPI server is running at https://mental-health-score-0skj.onrender.com and that the frontend is opened from the same computer. If the browser reports a CORS error, the backend's CORS configuration must be valid.");
     } else {
       showError(error.message || "Something went wrong while requesting the prediction.");
     }
