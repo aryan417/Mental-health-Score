@@ -53,7 +53,7 @@ def greet():
 
 @app.post("/predict")
 def predict(data:studentdata):
-    country_group = (data.country if data.country in top_countries else "other")
+    country_group = (data.Country if data.Country in top_countries else "Other")
 
 
     input_row = pd.DataFrame([{
