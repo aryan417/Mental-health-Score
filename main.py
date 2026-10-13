@@ -21,7 +21,7 @@ top_countries = ['Other','India','USA','Canada','Australia','UK','Germany',
 
 # first pydantic model
 class studentdata(BaseModel):
-    Age : int = Field(...,ge=10,le=10)
+    Age : int = Field(...,ge=10,le=100)
     Gender:Literal['Male','Female']
     Country:str
     Academic_Level:Literal['Undergraduate','Graduate','High School']
