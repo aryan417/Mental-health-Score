@@ -57,6 +57,7 @@ def predict(data:studentdata):
 
 
     input_row = pd.DataFrame([{
+        
 
     'Age':data.age,
     'Gender':data.gender,
