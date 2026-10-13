@@ -51,7 +51,7 @@ def greet():
 
 
 
-@app.post('/predict',response_model=PredictionResponse)
+@app.post("/predict")
 def predict(data:studentdata):
     country_group = data.country if data.country in top_countries else "other"
 
