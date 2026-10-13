@@ -125,12 +125,9 @@ https
     resultCard.hidden = false;
     resultCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
   } catch (error) {
-    if (error instanceof TypeError) {
-      showError("Could not connect to the API. Make sure your FastAPI server is running at https://mental-health-score-kx1h.onrender.com and that the frontend is opened from the same computer. If the browser reports a CORS error, the backend's CORS configuration must be valid.");
-    } else {
-      showError(error.message || "Something went wrong while requesting the prediction.");
-    }
-  } finally {
+    console.error("Prediction error:", error);
+    showError(error.message || "Something went wrong.");
+} finally {
     setLoading(false);
-  }
+}
 });
